@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LUMINA Audio</title>
+
+    <link rel="stylesheet" href="css/style.css">
+  
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+    <!-- Henter google fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Odia:wght@100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <!-- Menu ikon tilføjes -->
+    <a class="menu-ikon"><img src="img/menuikon.png" alt="menu" class="menuikon"></a>
+
+    <!-- Lumina logo tilføjes -->
+    <a href="index.html" class="logo"><img src="img/luminalogo.png" alt="Logo" class="logo"></a>
+
+    <!-- Ikoner tilføjes -->
+    <div class="ikoner">
+
+        <!-- Bruger input/label for at tilføje soegebaren -->
+        <div class="soege-bar">
+          <input type="checkbox" id="soege-bar-check">
+
+          <label for="soege-bar-check">
+            <img src="img/soegikon.png" alt="soeg" class="soegikon">
+          </label>
+
+          <input type="text" id="soeg-bar-input" placeholder="Søg...">
+        </div>
+
+        <!-- Bruger a tag for at gøre ikonerne clickable -->
+        <div class="profil-ikon">
+          <a><img src="img/profilikon.png" alt="login" class="profilikon"></a>
+        </div>
+
+        <div class="kurv-ikon">
+          <a><img src="img/kurvikon.png" alt="checkout" class="kurvikon"></a>
+        </div>
+      </div>
+  </header>
+
+<div id="overlay" class="overlay"></div>
+
+<!-- VENSTRE POPUP MENU -->
+<div id="popupmenu" class="popup-menu">
+    <button id="lukmenu" class="luk-knap">✕</button>
+
+    <nav class="menu-indhold">
+        <ul>
+            <li><a href="#">Højttalere</a></li>
+            <li><a href="#">Tilbehør</a></li>
+            <li><a href="#">Social Connect</a></li>
+            <li><a href="#">Om Lumina</a></li>
+            <li><a href="#">Hjælp</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <div class="menu-footer">
+        <a href="#">Konto</a>
+        <a href="#">Søg</a>
+    </div>
+</div>
+
+<!-- HØJRE KURV POPUP -->
+<div id="kurv-popup" class="kurv-popup">
+    <button id="lukkurv" class="luk-knap1">✕</button>
+
+    <h3 class="kurv-overskrift">Du har 1 varer i kurven</h3>
+
+    <div class="kurv-item">
+        <img src="img/kurv-speaker.png" class="kurv-billede" alt="lumina højttaler">
+        <div class="kurv-info">
+            <div class="kurv-titel">Lumina One</div>
+            <div class="kurv-farve">Dusty Rose</div>
+
+            <div class="kurv-kontrol">
+                <button class="antal-btn">-</button>
+                <span class="antal">1</span>
+                <button class="antal-btn">+</button>
+                <a href="#" class="fjerner">remove</a>
+            </div>
+        </div>
+        <div class="kurv-pris">1.995 kr.</div>
+    </div>
+
+    <div class="kurv-footer">
+        <div class="order">
+            <div>Ordertotal <br><small>Inkl. moms</small></div>
+            <div class="total-beloeb">1.995 kr.</div>
+        </div>
+        <button class="til-kassen-knap">Gå til kassen</button>
+    </div>
+</div>
+
+
+<!--Hero sektion-->
+<section class="hero-sektion">
+  <img src="img/hero1.png" alt="hero-billede">
+  <div class="hero-tekst">
+    <h1>Music That Unites <br> Design That Delights.</h1>
+    <button id="hero-btn" class="hero-btn">KØB NU</button>
+  </div>
+</section>
+
+
+<main>
+  <!-- Social proof sektion -->
+  <section>
+    <h2 class="sp-overskrift">Hørt & elsket af vores kunder!</h2>
+  </section>
+
+  <section class="sp-indhold">
+    <article>
+      <div class="lumina-tekst">
+        <p class="lumina-tekst">
+          LUMINA One er <br>
+          mere end en <br>
+          højttaler. Den er <br>
+          designet til at <br>
+          samle mennesker - <br>
+          fra hyggeaftener <br>
+          til strandfester.
+        </p>
+      </div>
+
+        <div class="emma-anmeldelse">
+          <p class="anmeldelse">
+            “Elsker hvor nem <br>
+            den er at tage med <br>
+            - perfekt til vores picnic!” <br>
+            - Emma, 21
+          </p>
+        </div>
+
+        <div class="ida-anmeldelse">
+          <p class="anmeldelse">
+            “Lækkert design, <br>
+            og vi kan alle koble på via <br>
+            app'en. Det gør <br>
+            festerne sjovere.” <br>
+            - Ida, 26
+          </p>
+        </div>
+    </article>
+   
+    <div class="trustpilot">
+      <img src="img/trust-stjerner.png" alt="trustpilot bedømmelse" class="tp-stjerner">
+      <p class="and">“4,8 ud af 5” baseret på 11.398 antal anmeldelser."</p>
+    </div>
+  
+  </section>
+
+
+ <!-- Farvesektion -->
+ <section class="banner">
+
+   <h2>Your color. Your vibe</h2>
+
+   <article class="sektion-indhold">
+
+    <figure class="produktbillede">
+     <img src="img/farvespeaker.png" class="img" alt="billede">
+    </figure>
+
+    <div class="tekstboks">
+     <h2>Farver</h2>
+     <p>         
+      Vælg mellem fire ikoniske farver!<br>
+       Dusty rose til romantikerne.<br>
+       Sage green til naturelskerne.<br>
+       Moonlight white til de stilrene.<br>
+       Lavender mist til de mystiske.
+      </p>
+      <button class="btn">KØB NU</button>
+    </div>
+
+   </article>
+ </section>
+
+
+ <!-- Social connect sektion-->
+ <section class="banner">
+
+   <h2>For Shared Playlists and Shared Memories</h2>
+
+   <article class="sektion-indhold">
+
+    <figure class="produktbillede">
+      <img src="img/hero2.png" class="img" alt="billede">
+    </figure>
+
+    <div class="tekstboks">
+       <h2>Social Connect</h2>
+       <p>
+        Bland playlister nemt med vores helt egen app kaldet Social Connect!
+        Find den i App Store og Google Play
+       </p>
+       <button class="btn">KØB NU</button>
+     </div>     
+
+   </article>
+ </section>
+ 
+  <!-- Sektion med specifikationer -->
+ <section class="specifikationer">
+
+  <h2 class="speci-overskrift">Specikationer</h2>
+
+  <article class="speci-indhold">
+    
+    <ul class="speci-liste">
+      <li class="speci-l">Vægt: 4,5kg</li>
+      <li class="speci-l">LED-lys der følger med musikken</li>
+      <li class="speci-l">Lydstyrke op til 100dB</li>
+      <li class="speci-l">Social Connect til fælles afspilnning</li>
+      <li class="speci-l">Op til 18 timers batteritid</li>
+      <li class="speci-l">Tilslutning: Bluetooth, AUX og parring med op til 3 andre enheder</li>
+      <li class="speci-l">IPX5 vandafvisende</li>
+    </ul>
+
+    <div class="speci-img">
+      <img src="img/specifikationer-img.png" class="speci" alt="dekonstrueret højttaler">
+    </div>
+
+  </article>
+ </section>
+
+
+  <!-- Ikoner i bunden -->
+  <section class="ikon-sektion">
+    <div class="ikon">
+      <img src="img/forsendelseikon.png" alt="forsendelse-ikon">
+    </div>
+    <div class="ikon">
+      <img src="img/garantiikon.png" alt="garanti-ikon">
+    </div>
+    <div class="ikon">
+      <img src="img/returikon.png" alt="return-ikon">
+    </div>
+    <div class="ikon">
+      <img src="img/appikon.png" alt="social-connect-ikon">
+    </div>
+  </section>
+</main>
+
+<!-- Footer sektion -->
+<Footer>
+  <!-- Adresse -->
+  <div class="adresse-footer">
+    <h3 class="adresse-title">Adresse</h3>
+    <p class="random-adresse"> 
+    Danmark <br> 
+    Unicornroad 28 <br>
+    Aarhus C, 8000
+    </p>
+  </div>
+
+  <!-- Kontakt -->
+  <div class="contact-footer">
+    <h3 class="contact-title">Kontakt</h3>
+    <p class="random-kontakt"> Telefontid: Mandag - Fredag 9-15 <br>
+    Telefon: +45 42053085 <br>
+    Email: kundeservice@lumina.audio.com
+    </p>
+  </div>
+
+ <!-- Lumina logo -->
+  <div class="midt-footer">
+    <a href="#">
+      <img src="img/luminalogo.png" alt="logo" class="logo-footer">
+    </a>
+    <div class="trustpilot-footer">
+      <img src="img/trust-stjerner.png" alt="trustpilot rating" class="tp-stjerner">
+      <p class="trustpilot-tekst">“4,8 ud af 5” baseret på 11.398 antal anmeldelser."</p>
+    </div>
+  </div>
+
+  <!-- Sociale medier -->
+  <div class="sociale-medier">
+    <h3 class="socials-title">Følg Us</h3>
+    <div class="social-ikoner">
+      <a href="#"><img src="img/facebook-ikon.png" alt="Facebook" class="ikon-billede"></a>
+      <a href="#"><img src="img/instagram-ikon.png" alt="Instagram" class="ikon-billede"></a>
+    </div>
+  </div>
+</Footer>
+<script src="js/script.js"></script>
+</body>
+</html>
