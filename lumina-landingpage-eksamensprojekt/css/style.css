@@ -1,0 +1,720 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  /* Farver */
+  --pink-color:#B68B7E;
+  --white-color:#FAF6F4;
+  --red-color:#7A1E2E;
+  --black-color: #2c2c2c;
+  --light-pink:#E3D4CC;
+  --hover-red:#5D1723;
+  
+
+  /* Hover filter */
+  --pink-filter: invert(61%) sepia(18%) saturate(551%) hue-rotate(327deg) brightness(92%) contrast(91%);
+
+  --white-filter: invert(95%) sepia(11%) saturate(434%) hue-rotate(317deg) brightness(103%) contrast(91%);
+
+  --red-filter: invert(16%) sepia(45%) saturate(2634%) hue-rotate(323deg) brightness(93%) contrast(97%);
+
+  --black-filter: invert(8%) sepia(0%) saturate(1011%) hue-rotate(243deg) brightness(102%) contrast(78%);
+
+  /* Skriftstørrelser */
+  --font-family:'Anek Odia', "Inter";
+  --font-size-small:13px;
+  --font-size-base:16px;
+  --font-size-medium:18px;
+  --font-size-large:20px;
+  --font-size-xl:24px;
+  --font-size-xxl:28px;
+  --font-size-hero-tablet:3rem;
+  --font-size-hero-mobile:2.5rem;
+  --font-size-hero: 4.5rem;
+
+  /* Skrifttykkelser */
+  --font-weight-normal:400;
+  --font-weight-medium:500;
+  --font-weight-semi-bold:600;
+  --font-weight-bold:700;
+}
+
+
+/* CSS TRANSFORM */
+.btn {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);   /* 5% større – justér efter smag */
+}
+
+.hero-btn {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.hero-btn:hover {
+  transform: scale(1.05);
+}
+
+.logo {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logo-footer {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.logo-footer:hover {
+  transform: scale(1.02);
+}
+
+
+
+/* STYLING AF HEADER */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--pink-color);
+  box-shadow:0 2px 10px rgba(0, 0, 0, 0.1);
+  padding:5px 7%;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+body {
+  background-color: var(--light-pink);
+}
+
+
+/* STYLING AF OVERLAY */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+    z-index: 900;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* STYLING AF MENU POPUP */
+.popup-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 100vh;
+  background: #ffffff;
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+  z-index: 1000;
+  padding: 80px 32px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-size-large);
+}
+
+.popup-menu.open {
+    transform: translateX(0);
+}
+
+.luk-knap, .luk-knap1{
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* menu liste */
+.menu-indhold ul {
+    list-style: none;
+    padding: 0;
+    color: var(--black-color);
+    margin: 0;
+}
+
+.menu-indhold li a {
+    padding: 34px 0;
+    text-decoration: none;
+    font-size: var(--font-size-large);
+    font-family: var(--font-family);
+    color: var(--black-color);
+    line-height: 3;
+}
+
+.menu-footer a {
+    margin-top:auto;
+    display: flex;
+    text-decoration: none;
+    flex-direction: column;
+    font-size: var(--font-size-medium);
+    font-family: var(--font-family);
+    color: var(--black-color);
+    line-height: 3;
+    border-top: 1px solid #e6e6e6;
+}
+
+/* STYLING AF KURV POPOP */
+.kurv-popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 380px;
+    height: 100vh;
+    background: #f7f7f7;
+    transform: translateX(100%);
+    transition: 0.25s ease;
+    z-index: 1000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.kurv-popup.open {
+    transform: translateX(0);
+}
+
+/* Kurvens indhold */
+.kurv-overskrift {
+    font-size: var(--font-size-base);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-family: var(--font-family);
+
+}
+
+.kurv-item {
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    gap: 10px;
+    background: white;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    font-size: var(--font-size-base);
+    font-family: var(--font-family);
+}
+
+.kurv-billede {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.kurv-kontrol {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.antal-btn {
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background: none;
+}
+
+.kurv-pris {
+    font-weight: bold;
+}
+
+/* bund af kurv */
+.kurv-footer {
+    margin-top: auto;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+    font-family: var(--font-family);
+}
+
+.til-kassen-knap {
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    background: var(--black-color);
+    color: var(--white-color);
+    font-weight: bold;
+    cursor: pointer;
+    font-family: var(--font-family);
+}
+
+
+/* STYLING AF LOGO */
+.logo {
+  width: 280px;
+  display: flex;
+  position: relative;
+  margin-right: -150px;
+}
+
+
+/* STYLING AF SOEGEBAR/IKON */
+.soege-bar {
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+}
+
+#soeg-bar-input {
+  display: none;
+  position: relative;
+  padding: 10px;
+  border: none;
+  font-size: 20px;
+  width: 200px;
+  background-color: var(--white-color);
+  color: var(--red-color);
+  margin: 10px;
+  border-radius: 10px;
+}
+
+#soeg-bar-input::placeholder {
+  color: var(--red-color);
+  font-family: var(--font-family);
+  font-weight: var(--font-size-medium);
+}
+
+#soege-bar-check {
+  display: none;
+}
+
+#soege-bar-check:checked ~ #soeg-bar-input {
+  display: block;
+}
+
+.soegikon {
+  margin: 15px;
+  width: 40px;
+  position: relative;
+}
+
+.soegikon:hover {
+  filter: var(--red-filter);  
+  cursor: pointer;
+}
+
+/* STYLING AF MENUIKON */
+.menuikon:hover {
+  filter: var(--red-filter);
+  cursor: pointer;
+}
+
+.menuikon {
+  color: var(--light-pink);
+  margin: 20px;
+  width: 40px;
+  margin-left: -70px;
+}
+
+/* STYLING AF PROFILIKON */
+.profilikon {
+  margin: 15px;
+  width: 40px;
+}
+
+.profilikon:hover {
+  filter: var(--red-filter);
+  cursor: pointer;
+}
+
+
+/* STYLING AF KURVIKON */
+.kurvikon {
+  margin: 15px;
+}
+
+.kurvikon:hover {
+  filter: var(--red-filter);
+  cursor: pointer;
+}
+
+
+/* STYLING AF IKONER */
+.ikoner {
+  display: flex;
+  align-items:center;
+  gap: 2rem;
+  margin-right: -90px;
+}
+
+
+/* STYLING AF KNAPPERr*/
+.btn{
+ background-color: var(--red-color);
+color: var(--white-color);
+border: none;
+padding: 0.9rem 1.8rem;
+border-radius: 8px;
+cursor: pointer;
+font-weight: 600;
+align-self: flex-start;
+}
+
+.btn:hover{
+ background-color: var(--hover-red);
+}
+
+
+/* STYLING AF HEROSEKTION */
+.hero-sektion img{
+  display: flex;
+  width: 100%;
+  position: absolute;
+  top: 10%;
+  justify-self: start;
+  object-fit: cover;
+}
+
+.hero-tekst {
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 22%;
+  transform: translate(-50%, -50%);
+  color: var(--white-color);
+  font-size: var(--font-size-xl);
+  font-family: var(--font-family);
+}
+
+#hero-btn{
+ background-color: var(--red-color);
+color: var(--white-color);
+border: none;
+padding: 0.9rem 5.8rem;
+border-radius: 8px;
+cursor: pointer;
+font-weight: 600;
+align-self: flex-start;
+font-size: var(--Font-size-medium);
+}
+
+#hero-btn:hover{
+ background-color: var(--hover-red);
+}
+
+
+/* STYLING AF TRUSTPILOT SEKTIONEN */
+.sp-indhold article{
+  display: flex;
+  padding: 20px;
+  margin-top: 100px;
+  margin-right: 100px;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.sp-indhold article> div {
+  flex: 1;
+  margin-left: 50px;
+  display: flex;
+}
+
+.sp-overskrift {
+  display: flex;
+  justify-content: center;
+  margin-top: 1050px;
+  font-size: 50px;
+  font-family: "Anek Odia";
+  letter-spacing: 8px;
+  color: #7A1E2E;
+}
+
+.lumina-tekst {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: "Anek Odia";
+  text-align: center;
+  color: var(--red-color);
+}
+
+.anmeldelse {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 400;
+  font-family: "Inter";
+  margin-top: 45px;
+  background-color: var(--white-color);
+  border-radius: 24px;
+  padding: 24px;
+  min-height: 291px;
+}
+
+.trustpilot {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: 70px 0;
+}
+
+.and {
+  margin: 0;
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: 400;
+  font-family: "Anek Odia";
+  font-size: 20px;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+
+/* STYLING AF BANNER */
+.farve-sektion{
+ max-width: 1900px;
+ margin: 0 auto;
+}
+
+.banner > h2{
+ margin-top: 200px;
+ text-align: center;
+ font-size: 2rem;
+ margin-bottom: 2.5rem;
+ font-weight: 600;
+ color: var(--white-color);
+ letter-spacing: 1.5px;
+ padding: 1rem;
+ background-color: var(--pink-color);
+ font-family: var(--font-family);
+}
+
+
+/* Rækker med billeder + tekst*/
+.sektion-indhold{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ gap: 2rem;
+}
+
+.colors .sektion-indhold{
+ flex-direction: row-reverse;
+}
+
+
+/* STYLING AF TEKSTBOKS */
+.tekstboks{
+ flex: 1;
+ background-color: var(--pink-color);
+ border-radius: 12px;
+ max-width: 420px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ box-shadow: 0 2px 6px var(--black-color);
+ margin: 4rem;
+ padding: 3rem;
+ font-family: var(--font-family);
+}
+
+.tekstboks h2{
+ font-weight: 600;
+ margin-bottom: 1rem;
+ color: var(--white-color);
+ font-family: var(--font-family);
+}
+
+.tekstboks p{
+ font-size: 1.4rem;
+ font-family: var(--font-family);
+ margin-bottom: 1.5rem;
+ color: var(--white-color);
+}
+
+
+/* STYLING AF BILLEDER */
+.produktbillede,
+.img{
+ flex: 1;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border: 1px;
+ min-height: 240px;
+ border-radius: 6px;
+ margin: 4rem;
+}
+
+.produktbillede img{
+ max-width: 100%;
+ height: auto;
+ border-radius: 6px;
+ margin: 4rem;
+}
+
+
+/* STYLING AF LISTE OVER SPECIFIKATIONER */
+.speci-liste {
+  list-style: disc;
+  list-style-position: outside;
+  padding-left: 1.5rem;
+  margin: 0;
+}
+.speci-overskrift {
+  padding: 8px;
+  font-family: "anek odia";
+  font-weight: var(--font-weight-semi-bold);
+  font-size: 1.6rem;
+  margin-left: 40px;
+}
+
+.specifikationer {
+  padding: 40px 0;
+  background-color: var(--pink-color);
+  color: var(--white-color);
+}
+
+.speci-indhold {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.speci-img {
+  margin: 0;
+  padding-right: 0;
+}
+
+.speci {
+  transform: none;
+}
+
+.speci-l {
+  font-size: 1.3rem;
+  line-height: 3.4rem;
+  font-weight: var(--font-weight-normal);
+  font-family: "anek odia";
+}
+
+
+/* STYLING AF IKONER I BUNDEN */
+.ikon-sektion{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.ikon{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 200px;
+  margin: 10px;
+}
+
+.ikon img{
+  width: 330px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+
+/* STYLING AF FOOTER */
+footer {
+  background-color:var(--pink-color);
+  box-shadow:0 2px 10px rgba(0, 0, 0, 0.1);
+  padding:36px 7%;
+  display:flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items:center;
+  justify-content: space-between;
+  z-index: 1000;
+  font-family: var(--font-family);
+  color: var(--light-pink);
+  font-weight: var(--Font-weight-medium);
+  font-size: var(--font-size-base);
+}
+
+footer > div, footer > a {
+  max-width: 360px;
+}
+
+/* Styling af socials */
+.socials-title {
+  margin-left: 45px;
+  position: relative;
+}
+
+.ikon-billede {
+  width: 44px;
+  height: auto;
+  margin: 12.5px;
+}
+
+.ikon-billede:hover {
+  cursor: pointer;
+}
+
+/* Kontakt */
+.contact-title {
+    margin-left: 45px;
+  position: relative;
+}
+
+
+/* Logo */
+.logo-footer {
+  width: 350px;
+}
+
+/* Styling af tp */
+.trustpilot-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: flex-start;
+  max-width: 380px;
+}
+
+.tp-stjerner {
+  width: 150px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trustpilot {
+  width: 200px;
+  margin: 10px;
+}
+
+.trustpilot-tekst {
+  font-family: var(--font-family);
+  color: var(--black-color);
+  font-size: var(--font-size-small);
+}
+
+/* Placering af logo/tp */
+.midter-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
